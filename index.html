@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerbet反応 シミュレーター</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>水素借用触媒 (Guerbet反応) シミュレーター</h1>
+    <div class="game-container">
+        <div class="simulation-area">
+            <h3>反応容器</h3>
+            <canvas id="reactionCanvas" width="500" height="400"></canvas>
+        </div>
+        <div class="controls">
+            <h3>コントロールパネル (反応速度定数)</h3>
+            <div class="control-item">
+                <label for="k1Slider">k1: 脱水素 (アルコール → アルデヒド)</label>
+                <input type="range" id="k1Slider" min="0.1" max="10" value="5" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="k2Slider">k2: アルドール縮合 (アルデヒド → エナール)</label>
+                <input type="range" id="k2Slider" min="0.1" max="10" value="3" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="k3Slider">k3: 水素化 (C=C二重結合)</label>
+                <input type="range" id="k3Slider" min="0.1" max="10" value="8" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="k4Slider">k4: 水素化 (C=Oカルボニル)</label>
+                <input type="range" id="k4Slider" min="0.1" max="10" value="4" step="0.1">
+            </div>
+
+            <button id="startButton">スタート</button>
+            <button id="resetButton">リセット</button>
+            
+            <div class="info-display">
+                <p>時間: <span id="timeDisplay">0.0</span> s</p>
+                <p>ブタノール(C4)濃度: <span id="butanolDisplay">0.000</span></p>
+                <p>ヘキサノール(C6)濃度: <span id="hexanolDisplay">0.000</span></p>
+            </div>
+
+             <div class="legend">
+                <p><span class="dot c2"></span> エタノール (C2)</p>
+                <p><span class="dot c4"></span> ブタノール (C4)</p>
+                <p><span class="dot c6"></span> ヘキサノール (C6)</p>
+                <p><span class="dot intermediate"></span> 中間体 (各種アルデヒド等)</p>
+            </div>
+        </div>
+    </div>
+    <div class="graph-container">
+        <h3>アルコール濃度変化グラフ</h3>
+        <canvas id="concentrationChart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
