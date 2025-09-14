@@ -1,0 +1,107 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h3 {
+    color: #005a9c;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.simulation-area, .controls {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#reactionCanvas {
+    background-color: #eef5ff;
+    border: 1px solid #b0c4de;
+}
+
+.controls {
+    width: 300px;
+}
+
+.control-item {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resetButton {
+    background-color: #6c757d;
+}
+
+#resetButton:hover {
+    background-color: #5a6268;
+}
+
+.info-display, .legend {
+    margin-top: 20px;
+}
+
+.legend p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+/* dotの色を更新 */
+.dot.c2 { background-color: #3498db; } /* Blue */
+.dot.c4 { background-color: #2ecc71; } /* Green */
+.dot.c6 { background-color: #f1c40f; } /* Yellow */
+.dot.intermediate { background-color: #95a5a6; } /* Gray */
+
+
+.graph-container {
+    margin-top: 20px;
+    width: 850px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
